@@ -52,7 +52,7 @@ describe('Todo model', () => {
       expect(Todos.list('zeke')[1].complete).to.be.false;
     });
 
-    xit("is a method that sets a specified task's `complete` property to true", () => {
+    it("is a method that sets a specified task's `complete` property to true", () => {
       Todos.add('zeke', { content: 'go to store' });
       Todos.add('zeke', { content: 'go to library' });
       Todos.add('zeke', { content: 'go to park' });
@@ -64,7 +64,7 @@ describe('Todo model', () => {
   });
 
   describe('`remove`', () => {
-    xit('removes a task, by index, for a given person', () => {
+    it('removes a task, by index, for a given person', () => {
       // set up a bunch of tasks
       for (var i = 0; i < 10; i++) Todos.add('zeke', { content: 'task ' + i });
       expect(Todos.list('zeke').length).to.equal(10);

@@ -15,9 +15,18 @@ module.exports = {
   add: function(name, task) {
     // saves a task for a given person
     !(name in tasks) ? (tasks[name] = [task]) : tasks[name].push(task);
+    if (!tasks[name][tasks[name].length - 1].hasOwnProperty('complete')) {
+      tasks[name][tasks[name].length - 1]['complete'] = false;
+    }
   },
   list: function(name) {
     return tasks[name];
   },
-  // etc.
+  complete: function(name, taskNum) {
+    tasks[name][taskNum]['complete'] = true;
+  },
+  remove: function(name, taskNum) {
+    tasks[name].splice(taskNum, 1);
+    return `task ${taskNum}`;
+  },
 };
