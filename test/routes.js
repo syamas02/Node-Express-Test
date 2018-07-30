@@ -10,7 +10,7 @@ describe('Todo routes', () => {
   });
 
   describe('`/users` URI', () => {
-    xit('GET responds with an empty array at first', () => {
+    it('GET responds with an empty array at first', () => {
       // when we make requests to `/users` we will get back an empty array
       return supertest // supertest object lets us make & test HTTP req/res
         .get('/users') // makes an HTTP request: GET '/users'
@@ -21,7 +21,7 @@ describe('Todo routes', () => {
         });
     });
 
-    xit('GET responds with a person after a task has been added', () => {
+    it('GET responds with a person after a task has been added', () => {
       todos.add('zeke', { content: 'a task' });
       return supertest
         .get('/users')
@@ -32,7 +32,7 @@ describe('Todo routes', () => {
         });
     });
 
-    xit('GET responds with everyone who has tasks', () => {
+    it('GET responds with everyone who has tasks', () => {
       todos.add('zeke', { content: 'a task' });
       todos.add('omri', { content: 'some other task' });
       todos.add('gabe', { content: 'yet more tasks' });
@@ -47,7 +47,7 @@ describe('Todo routes', () => {
   });
 
   describe('`/users/:name/tasks` URI', () => {
-    xit('GET lists all tasks for a specific user', () => {
+    it('GET lists all tasks for a specific user', () => {
       todos.add('dave', { content: 'task 1 for dave' });
       todos.add('joe', { content: 'task 1 for joe', complete: true });
       todos.add('joe', { content: 'task 2 for joe' });
@@ -64,7 +64,7 @@ describe('Todo routes', () => {
         });
     });
 
-    xit('POST creates a new task for that user & responds with the created task', () => {
+    it('POST creates a new task for that user & responds with the created task', () => {
       return supertest
         .post('/users/sarah/tasks')
         .send({ content: 'a new task for sarah' }) // the HTTP request body
@@ -83,7 +83,7 @@ describe('Todo routes', () => {
         });
     });
 
-    xit('POST respects pre-existing completion status', () => {
+    it('POST respects pre-existing completion status', () => {
       return supertest
         .post('/users/sarah/tasks')
         .send({ content: 'a new task for sarah', complete: true }) // the HTTP request body

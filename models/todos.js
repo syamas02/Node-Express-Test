@@ -18,6 +18,7 @@ module.exports = {
     if (!tasks[name][tasks[name].length - 1].hasOwnProperty('complete')) {
       tasks[name][tasks[name].length - 1]['complete'] = false;
     }
+    return tasks[name][tasks[name].length - 1];
   },
   list: function(name) {
     return tasks[name];
