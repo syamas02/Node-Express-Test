@@ -1,7 +1,7 @@
 {
   "name": "express-take-home",
   "version": "1.0.0",
-  "description": "",
+  "description": "Firstly, don't stress out that we will be using this to judge you in any way except to understand how we can better help you.",
   "main": "index.js",
   "scripts": {
     "test": "mocha --watch test/**.js",
@@ -15,8 +15,20 @@
   "devDependencies": {
     "chai": "^3.0.0",
     "chai-as-promised": "^5.1.0",
-    "mocha": "^2.2.5",
-    "supertest": "^1.0.1",
+    "mocha": "^5.2.0",
+    "supertest": "^3.1.0",
     "supertest-as-promised": "^2.0.1"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/syamas02/Node-Express-Test.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/syamas02/Node-Express-Test/issues"
+  },
+  "homepage": "https://github.com/syamas02/Node-Express-Test#readme"
 }
